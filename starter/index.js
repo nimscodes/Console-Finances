@@ -87,3 +87,7 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+// Calculate the total number of months 
+
+let total_no_of_months; //variable to store total number of months
+total_no_of_months = finances.length;
