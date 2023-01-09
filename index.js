@@ -132,3 +132,18 @@ for (let i = 0; i < finances.length; i++) {
     
 }
  console.log(`Greatest Increase in Profits: ${highest_date} ($${highest_profit})`);
+
+ //4. The greatest decrease in profits (date and amount) over the entire period.
+
+let lowest_profit = finances[0][1]; // variable to initialize the value of the highest profit
+let lowest_date = finances[0][0];
+for (let i = 0; i < finances.length; i++) {
+    let temp_profit = finances[i][1];
+    let temp_date = finances[i][0];
+    if (temp_profit < lowest_profit) {
+        lowest_profit = temp_profit;
+        lowest_date = temp_date;
+    }
+    
+}
+ console.log(`Greatest Decrease in Profits: ${lowest_date} ($${lowest_profit})`);
