@@ -87,11 +87,15 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+console.log("Financial Analysis");
+console.log("----------------------------");
+
 //1. The total number of months included in the dataset.
 
 let total_no_of_months; //variable to store total number of months
 total_no_of_months = finances.length;
 
+console.log(`Total Months: ${total_no_of_months}`);
 
 //2. The net total amount of Profit/Losses over the entire period.
 
@@ -102,9 +106,29 @@ for (let i = 0; i < finances.length; i++) {
     net_profit_or_loss += finances[i][1];
 }
 
+console.log(`Total: $${net_profit_or_loss}`)
+
 
 //3. The average of the changes in Profit/Losses over the entire period.
 
 let average; //variable to store the average changes
 
 average = (net_profit_or_loss / total_no_of_months).toFixed(2);
+
+console.log(`Average Change: $${average}`);
+
+
+//4. The greatest increase in profits (date and amount) over the entire period.
+
+let highest_profit = finances[0][1]; // variable to initialize the value of the highest profit
+let highest_date = finances[0][0];
+for (let i = 0; i < finances.length; i++) {
+    let temp_profit = finances[i][1];
+    let temp_date = finances[i][0];
+    if (temp_profit > highest_profit) {
+        highest_profit = temp_profit;
+        highest_date = temp_date;
+    }
+    
+}
+ console.log(`Greatest Increase in Profits: ${highest_date} ($${highest_profit})`);
